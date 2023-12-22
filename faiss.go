@@ -5,7 +5,8 @@
 package faiss
 
 /*
-#cgo LDFLAGS: -lfaiss_c
+#cgo CFLAGS: -I${SRCDIR}/include
+#cgo linux LDFLAGS: -L${SRCDIR}/lib/linux_amd64 -l:libfaiss_c.a -l:libfaiss_avx2.a -l:libstdc++.a -l:libgomp.a -lm -lblas -llapack
 
 #include <faiss/c_api/Index_c.h>
 #include <faiss/c_api/error_c.h>
